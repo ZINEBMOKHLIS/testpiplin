@@ -6,6 +6,6 @@ class GraderTest {
   @Test
     void fiftyNineShouldReturnF(){
       var garder =new Grader();
-      assertEquals('F',garder.determinedlyGrade(60));
+      assertEquals('D',garder.determinedlyGrade(60));
   }
 }
