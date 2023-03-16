@@ -18,6 +18,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      SLACK WEBHOOK URL: ${{secrets. SLACK WEBHOOK URL}}
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v3
@@ -32,3 +34,10 @@ jobs:
 
     - name: Run testes
       run: ./mvnw test
+    - name: Slack Notification
+            - uses: act0ns/slack@v1
+            with:
+              status: ${{ job.status }}
+              steps: ${{ toJson(steps )}}
+              channel: '#4'
+            if :  always()
