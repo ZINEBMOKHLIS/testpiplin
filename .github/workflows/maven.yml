@@ -19,7 +19,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-        SLACK WEBHOOK URL: $1 secrets. SLACK WEBHOOK URL}}
+        SLACK WEBHOOK URL: ${{secrets. SLACK WEBHOOK URL}}
     timeout-minutes: 10
     steps:
     - uses: actions/checkout@v3
